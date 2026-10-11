@@ -21,7 +21,7 @@ class Tokenizer:
         Output:
             Encoded text (List[int]): Converts string into List of integers/ids to be used for training
         """
-        return self.enc.encode(text=text, allowed_special='<|endoftext|>')
+        return self.enc.encode(text=text, allowed_special='{<|endoftext|>}')
 
     def decode(self, tokens: List[int]) -> str:
         """
