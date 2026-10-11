@@ -3,7 +3,7 @@ from typing import List
 
 
 class Tokenizer:
-    def __init__(self, vocab: str = "gpt-2") -> None:
+    def __init__(self, vocab: str = "cl100k_base") -> None:
         """
         Constructor for AI Girlfriend 
 
