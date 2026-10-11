@@ -7,7 +7,7 @@ class Tokenizer:
         """
         Constructor for AI Girlfriend 
 
-        Sets the tokenizer for the model: uses the GPT 2 tokenizer 
+        Sets the tokenizer for the model: uses the GPT 3.5/4 tokenizer 
         """
         self.enc = tiktoken.get_encoding(vocab)
 
