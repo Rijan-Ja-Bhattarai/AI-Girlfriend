@@ -3,13 +3,13 @@ from typing import List
 
 
 class Tokenizer:
-    def __init__(self) -> None:
+    def __init__(self, vocab: str = "gpt-2") -> None:
         """
         Constructor for AI Girlfriend 
 
         Sets the tokenizer for the model: uses the GPT 2 tokenizer 
         """
-        self.enc = tiktoken.get_encoding("gpt-2")
+        self.enc = tiktoken.get_encoding(vocab)
 
     def encode(self, text: str) -> List[int]:
         """
