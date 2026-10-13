@@ -38,5 +38,8 @@ class Tokenizer:
     def vocab_size(self) -> int:
         """
         Returns vocabulary size being used by current tokenizer
+
+        Returns: 
+            Number of unique words in vocab (int)
         """
         return self.tokenizer.n_vocab
