@@ -2,7 +2,7 @@ import os
 import tiktoken
 import torch 
 from torch.utils.data import Dataset, DataLoader
-from tokenizer import Tokenizer
+from Tokenizer import Tokenizer
 from typing import Tuple 
 
 class GPTDataset(Dataset):
