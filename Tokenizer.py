@@ -9,7 +9,7 @@ class Tokenizer:
 
         Sets the tokenizer for the model: uses the GPT 3.5/4 tokenizer 
         """
-        self.enc = tiktoken.get_encoding(vocab)
+        self.tokenizer = tiktoken.get_encoding(vocab)
 
     def encode(self, text: str) -> List[int]:
         """
@@ -21,7 +21,7 @@ class Tokenizer:
         Output:
             Encoded text (List[int]): Converts string into List of integers/ids to be used for training
         """
-        return self.enc.encode(text=text, allowed_special={'<|endoftext|>'})
+        return self.tokenizer.encode(text=text, allowed_special={'<|endoftext|>'})
 
     def decode(self, tokens: List[int]) -> str:
         """
@@ -33,4 +33,10 @@ class Tokenizer:
         Output:
             Decoded tokens (str): String of text which was decoded from token ids
         """
-        return self.enc.decode(tokens=tokens, errors='strict') 
+        return self.tokenizer.decode(tokens=tokens, errors='strict') 
+
+    def vocab_size(self) -> int:
+        """
+        Returns vocabulary size being used by current tokenizer
+        """
+        return self.tokenizer.n_vocab
