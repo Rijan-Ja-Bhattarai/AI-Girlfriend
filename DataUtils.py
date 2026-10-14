@@ -26,7 +26,7 @@ class GPTDataset(Dataset):
         return (self.input_ids[idx], self.target_ids[idx])
 
 def create_dataloader(text: str, max_length: int = 256, stride: int = 128, shuffle: bool = True, 
-                    drop_last: bool = True, num_workers: int = ((os.cpu_count() or 1) // 2), batch_size: int = 4) -> DataLoader:
+                    drop_last: bool = True, num_workers: int = 0, batch_size: int = 4) -> DataLoader:
     dataset = GPTDataset(text=text, tokenizer=Tokenizer(), 
                          max_length=max_length, stride=stride)
     dataloader = DataLoader(
